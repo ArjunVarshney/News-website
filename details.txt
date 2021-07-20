@@ -1,0 +1,15 @@
+Light mode:-
+   background color: #E1D2F5
+   text color: #050024
+
+Dark mode:-
+   background color: #050024
+   text color: #E1D2F5
+
+General info:-
+   card color: #1C1E52
+   heading font size:
+   headline font size:
+   content font size:
+   heading font family:
+   text font family:

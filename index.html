@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Indian Express News</title>
+   <!-- linking icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <!-- linking fonts -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Poppins:wght@200&family=Raleway:wght@900&family=Roboto&family=Roboto+Mono:wght@300&display=swap"
+      rel="stylesheet">
+   <!-- linking stylesheets -->
+   <link rel="stylesheet" href="style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+
+<style>
+   :root {
+      --black: #050024;
+      --white: #f1eff1;
+      --acent: #1C1E52;
+      --blue: #2300FF;
+   }
+
+   body {
+      background-color: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+   }
+</style>
+
+<body>
+   <div class="fullnav">
+      <nav>
+         <div class="navout">
+            <div class="datetime">
+               <span class="time" id="time">00:00:00</span>
+               <span class="separator">|</span>
+               <span class="date" id="date">25 feb 2020</span>
+               <span class="separator">|</span>
+               <span class="day" id="day">thu</span>
+            </div>
+            <div class="logo">I<span>NP</span></div>
+            <div class="navicons">
+               <div class="material-icons md" id="modetoggle" onclick="modetoggle()">light_mode</div>
+               <div id="find" class="material-icons md" onclick="opensearch()">search</div>
+               <div id="menu" class="material-icons md" onclick="togglemenu()">menu</div>
+            </div>
+         </div>
+      </nav>
+      <div id="fullmenu" class="openmenu">
+         <div class="langselector">
+            <div class="insls">
+               <h4>Language</h4>
+               <div class="material-icons md" id="langtoggle" onclick="showalllangs()">expand_more</div>
+            </div>
+            <div class="langexp">
+               <div id="ar" onclick="languageselector(this.id)" class="langopt">Arabic</div>
+               <div id="de" onclick="languageselector(this.id)" class="langopt">German</div>
+               <div id="el" onclick="languageselector(this.id)" class="langopt">Greek</div>
+               <div id="en" onclick="languageselector(this.id)" class="langopt" selected>English</div>
+               <div id="es" onclick="languageselector(this.id)" class="langopt">Spanish</div>
+               <div id="fr" onclick="languageselector(this.id)" class="langopt">french</div>
+               <div id="he" onclick="languageselector(this.id)" class="langopt">Hebrew</div>
+               <div id="hi" onclick="languageselector(this.id)" class="langopt">Hindi</div>
+               <div id="it" onclick="languageselector(this.id)" class="langopt">Italian</div>
+               <div id="ja" onclick="languageselector(this.id)" class="langopt">Japnese</div>
+               <div id="ml" onclick="languageselector(this.id)" class="langopt">Malyalam</div>
+               <div id="mr" onclick="languageselector(this.id)" class="langopt">Marathi</div>
+               <div id="nl" onclick="languageselector(this.id)" class="langopt">Dutch</div>
+               <div id="no" onclick="languageselector(this.id)" class="langopt">Norwegian</div>
+               <div id="pt" onclick="languageselector(this.id)" class="langopt">Portuguese</div>
+               <div id="ro" onclick="languageselector(this.id)" class="langopt">Romanian</div>
+               <div id="ru" onclick="languageselector(this.id)" class="langopt">Russian</div>
+               <div id="sv" onclick="languageselector(this.id)" class="langopt">Swedish</div>
+               <div id="ta" onclick="languageselector(this.id)" class="langopt">Tamil</div>
+               <div id="te" onclick="languageselector(this.id)" class="langopt">Telugu</div>
+               <div id="uk" onclick="languageselector(this.id)" class="langopt">Ukrainian</div>
+               <div id="zh" onclick="languageselector(this.id)" class="langopt">Chinese</div>
+               <div id="all" onclick="languageselector(this.id)" class="langopt selected">All</div>
+            </div>
+         </div>
+         <div class="categorymenu">
+            <div class="insls">
+               <h4>Categories</h4>
+               <div class="material-icons md" id="categorytoggle" onclick="showallcategories()">expand_more</div>
+            </div>
+            <div class="langexp">
+               <div class="topicopt" onclick="categoryselector(this.id)" id="breking-news">Breaking News</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="nation">Politics</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="science">Science</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="technology">Technology</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="business">Business</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="sports">Sports</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="world">World</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="entertainment">Entertainment</div>
+               <div class="topicopt" onclick="categoryselector(this.id)" id="health">Health</div>
+               <div class="topicopt selected" onclick="categoryselector(this.id)" id="none">All</div>
+            </div>
+         </div>
+      </div>
+      <div class="searchout">
+         <input type="text" name="search" id="search" placeholder="Search...">
+         <div class="material-icons md" onclick="initiatesearch()">search</div>
+      </div>
+      <div class="categoryout">
+         <ul class="category" id="allcountries">
+            <li class="countries" onclick="assigncountry(this.id)" id="au">Australia</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="br">Brazil</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ca">Canada</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ch">Switzerland</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="cn">China</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="de">Germany</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="eg">Egypt</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="es">Spain</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="fr">France</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="gb">United Kingdom</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="gr">Greece</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="hk">Hong Kong</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ie">Ireland</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="il">Israel</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="in">India</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="it">Italy</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="jp">Japan</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="nl">Neatherlands</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="no">Norway</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="pe">Peru</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ph">Philippines</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="pk">Pakistan</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="pt">Portugal</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ro">Romania</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ru">Russia</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="se">Sweden</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="sg">Singapore</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="tw">Taiwan</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="ua">Ukraine</li>
+            <li class="countries" onclick="assigncountry(this.id)" id="us">United States</li>
+            <li class="countries selected" onclick="assigncountry(this.id)" id="all">All</li>
+         </ul>
+         <div class="material-icons md" id="opentoggle" onclick="showallcountries()">expand_more</div>
+      </div>
+   </div>
+
+   <section id="body">
+      <h4>Category</h4>
+      <div class="bodyins">
+         <div>
+            <div class="news" id="1">
+               <div class="image"><img
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png">
+               </div>
+               <div class="title">Title should be kept here...</div>
+               <div class="dateofpublish">00:00 25 xxx 2020</div>
+            </div>
+         </div>
+      </div>
+   </section>
+</body>
+<script src="nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</html>

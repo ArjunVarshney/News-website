@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+.fullnav {
+  position: fixed;
+  width: 100%;
+  z-index: 99999 !important;
+}
+nav {
+  display: grid;
+  place-items: center;
+  padding: 20px 55px;
+  border-bottom: 1px solid var(--white);
+  background-color: var(--acent);
+}
+.navout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.datetime {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: -1.2px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  /* font-size: 20px; */
+}
+.logo {
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+}
+.logo > span {
+  color: var(--blue);
+}
+.navicons {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+.navicons > div {
+  z-index: 10;
+}
+
+.md {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.categoryout {
+  padding: 10px 55px;
+  background: var(--acent);
+  display: flex;
+  width: 100%;
+}
+.categoryout > div {
+  cursor: pointer;
+}
+.category {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  height: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+.countries {
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.countries::before {
+  content: "| ";
+  font-weight: bold;
+}
+.selected {
+  background-color: var(--black) !important;
+}
+.allcountries {
+  height: fit-content;
+  overflow-y: auto !important;
+}
+.opentoggle {
+  transform: rotate(180deg);
+}
+.searchout {
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid var(--white);
+  padding: 10px 55px;
+  height: 0px;
+  display: none;
+}
+.searchout > div {
+  background-color: var(--acent);
+  padding: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#search {
+  width: 100%;
+  padding: 5px 15px;
+  font-family: serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  background-color: var(--acent);
+  color: var(--white);
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+#search:focus {
+  outline: none;
+}
+#fullmenu {
+  position: fixed;
+  height: fit-content;
+  width: 300px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: #100f42;
+  color: #f1eff1;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 20px;
+  overflow: auto;
+  z-index: 9;
+}
+.openmenu {
+  padding: 0px !important;
+  width: 0px !important;
+}
+#fullmenu > div {
+  width: 100%;
+  border-top: 2px solid #00f9ff;
+  border-bottom: 2px solid #00f9ff;
+}
+
+.insls {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.langexp {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+}
+.langopt {
+  padding: 2px 10px;
+  margin: 1px;
+  background-color: #001677;
+}
+.topicopt {
+  padding: 2px 10px;
+  margin: 1px;
+  background-color: #001677;
+}
+
+#body {
+  width: 100%;
+  height: 100%;
+  padding: 20px 60px;
+  font-family: "Roboto", serif;
+  padding-top: 180px;
+  z-index: 0;
+}
+#body > h4 {
+  font-weight: 300;
+  font-size: 18px;
+  z-index: 0;
+}
+#body > h4::after {
+  content: " :-";
+}
+.bodyins {
+  margin: 20px 0px;
+  z-index: 0;
+  z-index: 0;
+}
+.bodyins > div {
+  border-left: 1px solid var(--white);
+  padding: 10px 20px;
+  z-index: 0;
+}
+.news {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--acent);
+  position: relative;
+  display: flex;
+  box-shadow: 0 0 10px -3px var(--black) inset;
+  z-index: 0;
+}
+.image {
+  display: flex;
+  align-items: center;
+}
+.image > img {
+  height: 130px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -3px var(--black);
+  z-index: 0;
+}
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  padding: 10px 15px;
+  text-shadow: 0 0 5px var(--black);
+}
+.dateofpublish {
+  position: absolute;
+  right: 10px;
+  bottom: 7px;
+  font-family: "Roboto";
+  opacity: 0.4;
+  font-size: small;
+}
+.dateofpublish::before {
+  content: "Published: ";
+}
